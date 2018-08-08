@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AlertsViewController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>AlertsViewer</members>
+        <members>AlertsViewerDemoApp</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <version>39.0</version>
+</Package>

@@ -1,0 +1,1 @@
+select Id, Name, CreatedDate, Type__c, Message__c from Alert__c

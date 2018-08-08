@@ -1,0 +1,4 @@
+<design:component>
+	<design:attribute name="PushTopicName" label="Push Topic Name" default="Alerts"/>
+    <design:attribute name="MessageFormat" label="Message Format" default="{0} - New Alert created - {1} : {2}"/>
+</design:component>

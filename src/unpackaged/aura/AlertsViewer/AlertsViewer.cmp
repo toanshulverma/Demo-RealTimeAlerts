@@ -1,0 +1,32 @@
+<aura:component controller="AlertsViewController" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="PushTopicName" type="String" access="global"/>
+    <aura:attribute name="MessageFormat" type="String"  access="global"/>
+    <aura:attribute name="FieldsToDisplay" type="String[]"  access="global" default="['CreatedDate', 'Name', 'Message__c']"/>
+	<aura:attribute name="Messages" type="String[]"  access="global"/>
+    <aura:attribute name="SessionID" type="String"  access="global"/>
+
+    <ltng:require 
+                    styles="{!$Resource.SLDS +
+                        '/styles/salesforce-lightning-design-system.min.css'}"
+
+                    scripts="/resource/CometD/cometd.js,
+                           /resource/CometD/jquery-1.5.1.js,
+                           /resource/CometD/json2.js,
+                           /resource/CometD/jquery.cometd.js"
+                  afterScriptsLoaded="{!c.doInit}"/>
+    
+    <aura:method name="subscribeToStreamingChannel" action="{!c.subscribeToStreamingChannel}"/>
+    
+    <div  style="height: 98%;overflow-y: scroll;">
+        
+        <aura:iteration items="{!v.Messages}" var="alertMsg">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_info" role="alert">
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">{! alertMsg }</h2>
+                    </div>
+                </div>
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

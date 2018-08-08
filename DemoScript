@@ -1,0 +1,5 @@
+//Script to add new Message
+Alert__c newAlert = new Alert__c();
+newAlert.Type__c = 'Notification';
+newAlert.Message__c = 'Product Braun Water Filter is currently backordered';
+insert newAlert;
